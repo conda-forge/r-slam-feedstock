@@ -1,4 +1,4 @@
-{% set version = "0.1-47" %}
+{% set version = "0.1-48" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/slam_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/slam/slam_{{ version }}.tar.gz
-  sha256: 696356a68aa92059fa794444faa4c1775193c723a262a5f75de3c3c3047fcf89
+  sha256: 0a0b32d35fd6b8d1ac021b1358e73d32ab942d274a84fbba732d6c02efdcfade
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -43,10 +43,9 @@ test:
 about:
   home: https://CRAN.R-project.org/package=slam
   license: GPL-2
-  summary: Data structures and algorithms for sparse arrays and matrices, based on index arrays
-    and simple triplet representations, respectively.
+  summary: Data structures and algorithms for sparse arrays and matrices, based on index arrays and simple triplet representations, respectively.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
