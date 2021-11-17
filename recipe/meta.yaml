@@ -1,4 +1,4 @@
-{% set version = "0.1-48" %}
+{% set version = "0.1-49" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/slam_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/slam/slam_{{ version }}.tar.gz
-  sha256: 0a0b32d35fd6b8d1ac021b1358e73d32ab942d274a84fbba732d6c02efdcfade
+  sha256: 4800a0fd3102319d13cd1f739f2cd785c8acca4a803e62f22ffb94beb0b39010
 
 build:
   merge_build_host: true  # [win]
