@@ -1,4 +1,4 @@
-{% set version = "0.1-54" %}
+{% set version = "0.1-55" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/slam_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/slam/slam_{{ version }}.tar.gz
-  sha256: f9ad6f46954d33fe79a5f3bb064a2378f603314cf8b4457951009615a737340f
+  sha256: 0fb8450d002ba79855063300941e830133a1880011d926e644aa639dbde91c03
 
 build:
   number: 0
