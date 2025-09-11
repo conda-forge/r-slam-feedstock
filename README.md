@@ -13,6 +13,8 @@ Package license: GPL-2.0-only
 
 Summary: Data structures and algorithms for sparse arrays and matrices, based on index arrays and simple triplet representations, respectively.
 
+Development: https://github.com/cran/slam
+
 About r-slam
 ------------
 
@@ -21,6 +23,8 @@ Home: https://CRAN.R-project.org/package=slam
 Package license: GPL-2.0-only
 
 Summary: Data structures and algorithms for sparse arrays and matrices, based on index arrays and simple triplet representations, respectively.
+
+Development: https://github.com/cran/slam
 
 Current build status
 ====================
