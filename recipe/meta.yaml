@@ -16,20 +16,24 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
-    - {{ compiler('c') }}              # [not win]
-    - {{ stdlib("c") }}                # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ stdlib("m2w64_c") }}          # [win]
-    - {{ posix }}filesystem        # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ stdlib("c") }}          # [not win]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ stdlib("m2w64_c") }}    # [win]
+    - {{ compiler('fortran') }}  # [osx and arm64]
+    - {{ posix }}filesystem      # [win]
     - {{ posix }}make
-    - {{ posix }}sed               # [win]
-    - {{ posix }}coreutils         # [win]
-    - {{ posix }}zip               # [win]
-    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - {{ posix }}sed             # [win]
+    - {{ posix }}coreutils       # [win]
+    - {{ posix }}zip             # [win]
   host:
     - r-base
     - libblas
@@ -43,6 +47,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=slam
+  dev_url: https://github.com/cran/slam
   license: GPL-2.0-only
   summary: Data structures and algorithms for sparse arrays and matrices, based on index arrays and simple triplet representations, respectively.
   license_family: GPL2
@@ -53,19 +58,3 @@ extra:
   recipe-maintainers:
     - conda-forge/r
     - croth1
-
-# Package: slam
-# Version: 0.1-45
-# Title: Sparse Lightweight Arrays and Matrices
-# Authors@R: c(person("Kurt", "Hornik", role = c("aut", "cre"), email = "Kurt.Hornik@R-project.org", comment = c(ORCID = "0000-0003-4198-9911")), person("David", "Meyer", role = "aut"), person("Christian", "Buchta", role = "aut"))
-# Description: Data structures and algorithms for sparse arrays and matrices, based on index arrays and simple triplet representations, respectively.
-# Depends: R (>= 3.4.0)
-# Imports: stats
-# Enhances: Matrix, SparseM, spam
-# License: GPL-2
-# NeedsCompilation: yes
-# Packaged: 2019-02-26 10:47:45 UTC; hornik
-# Author: Kurt Hornik [aut, cre] (<https://orcid.org/0000-0003-4198-9911>), David Meyer [aut], Christian Buchta [aut]
-# Maintainer: Kurt Hornik <Kurt.Hornik@R-project.org>
-# Repository: CRAN
-# Date/Publication: 2019-02-26 11:23:12 UTC
